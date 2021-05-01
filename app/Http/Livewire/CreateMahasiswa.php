@@ -13,17 +13,19 @@ class CreateMahasiswa extends Component
     public $alamat;
     public $updateMode = false;
 
+    // Read Data
     public function render()
     {
         return view('livewire.create-mahasiswa', ['dataMahasiswa' => Mahasiswa::all()]);
     }
 
-
+    // Delete Data
     public function destroy($id)
     {
         Mahasiswa::where('id', $id)->delete();
         return redirect('/mahasiswa');
     }
+    // Update & Create Data
     public function store()
     {
 
@@ -46,6 +48,7 @@ class CreateMahasiswa extends Component
         redirect('/mahasiswa');
     }
 
+    //Edit Data
     public function edit($id)
     {
         $record = Mahasiswa::findOrFail($id);
