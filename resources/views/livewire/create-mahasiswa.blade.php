@@ -1,5 +1,5 @@
 <form>
-    // Form Create and Update Data
+    {{-- Form Create and Update Data --}}
     <div>
         <div class="mt-10 sm:mt-0">
             <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    //Disylay Data on Table
+    {{-- Disylay Data on Table --}}
     <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-emerald-50 to-teal-100 p-10">
         <table class="table-hover">
             <thead>
@@ -67,14 +67,14 @@
                             {{ $Mahasiswa->nim }}</td>
                         <td class="border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">
                             {{ $Mahasiswa->alamat }}</td>
-                        // Edit Button
+                        {{-- Edit Button --}}
                         <td class="btn border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">
                             <button type="button" wire:click='edit({{ $Mahasiswa->id }})'
                                 class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 Edit
                             </button>
                         </td>
-                        // Delete Button
+                        {{-- Delete Button --}}
                         <td class="btn border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">
                             <button type="button" wire:click='destroy({{ $Mahasiswa->id }})'
                                 class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
