@@ -12,7 +12,8 @@ class CreateMahasiswa extends Component
 
     public function render()
     {
-        return view('livewire.create-mahasiswa');
+        return view('livewire.create-mahasiswa', ['dataMahasiswa' => Mahasiswa::all()]);
+        
     }
 
     public function createMahasiswa()

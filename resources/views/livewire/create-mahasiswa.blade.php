@@ -48,6 +48,8 @@
 <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-emerald-50 to-teal-100 p-10">
     <table class="table-hover">
         <thead>
+
+            
             <tr>
                 <th class="w-1/3 ... py-2 text-emerald-600">NAMA</th>
                 <th class="w-1/4 ... py-2 text-emerald-600">NIM</th>
@@ -57,22 +59,36 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ( $dataMahasiswa as $Mahasiswa)
+            
+            
             <tr class="bg-emerald-200">
-                <td class="border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">Arif Budiman Arrosyid</td>
-                <td class="border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">20180140119</td>
-                <td class="border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">Klapasawit, Purwojati, Banyumas</td>
+                <td class="border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">{{ $Mahasiswa -> nama }}</td>
+                <td class="border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">{{ $Mahasiswa -> nim }}</td>
+                <td class="border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">{{ $Mahasiswa -> alamat }}</td>
                 <td class="btn border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">
                     <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Edit
-                      </button>
+                    </button>
                 </td>
                 <td class="btn border border-emerald-500 px-4 py-2 text-emerald-600 font-medium">
                     <button class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Delete
-                      </button>
+                    </button>
                 </td>
             </tr>
-
+            @endforeach
+            
+            {{-- @foreach($data_mahasiswa as $mahasiswa)
+                <tr>
+                    <td>{{$mahasiswa->nama}}</td>
+                    <td>{{$mahasiswa->nim}}</td>
+                    <td>{{$mahasiswa->alamat}}</td>
+                    <td><a href="/mahasiswa/{{$mahasiswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                    <td><a href="/mahasiswa/delete/{{$mahasiswa->id}}" class="btn btn-danger btn-sm" onclick="return confirm('yakin mau dihapus?')">Delete</a></td>
+    
+                </tr>
+                @endforeach --}}
         </tbody>
     </table>
 </div>
